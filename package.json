@@ -1,0 +1,13 @@
+{
+  "name": "napi-rs-repro",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "napi build --release",
+    "leaking": "node --max_old_space_size=100  script-leaking.js",
+    "fixed": "node  --max_old_space_size=100  script-fixed.js"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.10.0"
+  }
+}
