@@ -15,6 +15,7 @@ pub fn leaking_func(env: Env, func: JsFunction) -> napi::Result<()> {
                 .map(|js_string| vec![js_string])
         })?;
 
+    tsfn.clone();
     tsfn.unref(&env)?;
     tsfn.call(Ok("foo".into()), ThreadsafeFunctionCallMode::Blocking);
 
